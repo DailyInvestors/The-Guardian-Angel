@@ -40,4 +40,6 @@ Cyber Security Agents
 34. spam guard
 35. vpn/moch
 36. firewall
-37. self-repair   
+37. self-repair
+
+NOTE: THIS IS COVERED BY THE CYBORG TEK LISCENSE 
