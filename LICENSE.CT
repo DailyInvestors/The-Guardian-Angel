@@ -1,0 +1,105 @@
+Software License
+IMPORTANT: THIS IS A LEGAL DOCUMENT. PLEASE READ IT CAREFULLY. THIS LICENSE IS PROVIDED FOR INFORMATIONAL PURPOSES ONLY AND DOES NOT CONSTITUTE LEGAL ADVICE. YOU SHOULD CONSULT WITH A QUALIFIED LEGAL PROFESSIONAL TO DRAFT OR REVIEW ANY LICENSE AGREEMENT FOR YOUR SPECIFIC PROJECT.
+
+License Name: [Your Project Name] Exclusive Use & Non-Commercial Private License
+
+Version: 1.0
+
+Effective Date: May 27, 2025
+
+This License Agreement ("License") is a legal agreement between [Your Full Name/Company Name] ("Licensor") and you ("Licensee"). By accessing, using, or deploying the software, code, designs, and associated materials (collectively, "Project") provided by the Licensor, the Licensee agrees to be bound by the terms and conditions of this License.
+
+1. Definitions
+
+"Project": Refers to all software, code, algorithms, source code, object code, executable files, user interfaces, graphical designs, stylesheets, documentation, technical specifications, and any other associated materials or intellectual property provided by the Licensor under this License.
+"Idea": Refers to the conceptual framework, underlying principles, business model, functional concepts, or any general concepts embodied or illustrated by the Project, distinct from the specific implementation or expression of those concepts.
+"Designs": Refers to the specific visual, structural, and interactive elements, blueprints, and layouts of the Project, including but not limited to user interface (UI), user experience (UX) flows, architectural diagrams, database schemas, and any other non-code creative expressions.
+"Use": Refers to the act of executing, running, displaying, or otherwise interacting with the compiled or executable form of the Project for its intended purpose.
+"Licensor": [Your Full Name/Company Name], the original creator and owner of the Project.
+"Licensee": The individual or entity agreeing to the terms of this License.
+2. Grant of License
+
+2.1. Limited Use Right: The Licensor hereby grants to the Licensee a non-exclusive, non-transferable, non-sublicensable, revocable, and strictly limited license to Use the compiled or executable form of the Project solely for private, non-commercial purposes.
+
+2.2. No License for Ideas or Designs: This License explicitly does NOT grant any rights or licenses to the Idea, Designs, or underlying intellectual property of the Project, other than the limited right to Use the compiled Project as specified in Section 2.1. The Licensor expressly retains all rights, title, and interest in and to the Idea, Designs, and all intellectual property rights associated with the Project.
+
+3. Restrictions and Prohibitions
+
+The Licensee shall NOT, and shall not permit any third party to:
+
+3.1. Redistribute, sell, lease, rent, lend, or sublicense the Project, in whole or in part, in any form, including but not limited to source code, object code, or compiled binaries.
+3.2. Modify, adapt, translate, reverse engineer, decompile, disassemble, or create derivative works based on the Project, its source code, object code, or Designs. This prohibition extends to attempting to discern the source code or underlying structure of the Project by any means.
+3.3. Use the Project for any commercial purpose, including but not limited to generating revenue, performing services for third parties, or integrating into commercial products or services.
+3.4. Use the Project or any part thereof to develop, promote, or offer any product or service that competes with or is similar in concept, design, or functionality to any current or future offering by the Licensor.
+3.5. Publicly display, perform, or transmit the Project without the express prior written consent of the Licensor.
+3.6. Remove, alter, or obscure any copyright, trademark, or other proprietary notices from the Project.
+3.7. Use the Project in any way that violates any applicable local, national, or international law or regulation, including but not limited to privacy laws, data protection laws, or export control laws.
+3.8. Use the Project to infringe upon the intellectual property rights of any third party.
+3.9. Utilize the Project, or any part of its source code, object code, algorithms, or Designs, to recreate the Idea or Designs of the Project in a separate, independent project or offering. This includes, but is not limited to, using information gained from the Project's operation or visual presentation to develop a conceptually similar but independently coded product.
+
+4. Intellectual Property Rights
+
+4.1. The Project, including all its source code, object code, algorithms, Designs, user interface elements, and the underlying Idea, are and shall remain the exclusive property of the Licensor.
+4.2. All copyrights, patents, trademarks, trade secrets, and other intellectual property rights in and to the Project, the Idea, and the Designs are owned by the Licensor and are protected by applicable intellectual property laws and international treaties.
+4.3. This License does not transfer any ownership rights or intellectual property rights from the Licensor to the Licensee.
+
+5. Disclaimer of Warranties
+
+5.1. THE PROJECT IS PROVIDED "AS IS," WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NONINFRINGEMENT.
+5.2. THE LICENSOR DOES NOT WARRANT THAT THE PROJECT WILL BE UNINTERRUPTED, ERROR-FREE, SECURE, OR THAT ANY DEFECTS WILL BE CORRECTED. THE LICENSOR MAKES NO WARRANTY REGARDING THE RESULTS THAT MAY BE OBTAINED FROM THE USE OF THE PROJECT, OR AS TO THE ACCURACY, RELIABILITY, OR CONTENT OF ANY INFORMATION PROVIDED THROUGH THE PROJECT.
+
+6. Limitation of Liability
+
+6.1. TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL THE LICENSOR BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, PUNITIVE, OR EXEMPLARY DAMAGES WHATSOEVER (INCLUDING, WITHOUT LIMITATION, DAMAGES FOR LOSS OF PROFITS, DATA, GOODWILL, OR BUSINESS INTERRUPTION) ARISING OUT OF ORING CONNECTION WITH THE USE OR INABILITY TO USE THE PROJECT, OR ANY FAILURE OF SECURITY OR DATA BREACHES RELATED TO THE PROJECT, REGARDLESS OF THE THEORY OF LIABILITY (CONTRACT, TORT, NEGLIGENCE, OR OTHERWISE), EVEN IF THE LICENSOR HAS BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.
+6.2. THE LICENSOR SPECIFICALLY DISCLAIMS ANY LIABILITY FOR DAMAGES OR LOSSES RESULTING FROM THIRD-PARTY INTERFERENCE, MALICIOUS ATTACKS, HACKING, DATA THEFT, OR ANY UNAUTHORIZED ACCESS TO OR USE OF THE PROJECT OR ANY DATA ASSOCIATED WITH IT, REGARDLESS OF THE CAUSE, INCLUDING BUT NOT LIMITED TO DEFICIENCIES IN THE PROJECT'S SECURITY FEATURES, EXTERNAL NETWORK VULNERABILITIES, OR ACTS OF THIRD-PARTY MALICE.
+6.3. IN JURISDICTIONS THAT DO NOT ALLOW THE EXCLUSION OR LIMITATION OF LIABILITY FOR INCIDENTAL OR CONSEQUENTIAL DAMAGES, THE LICENSOR'S LIABILITY IN SUCH JURISDICTIONS SHALL BE LIMITED TO THE EXTENT PERMITTED BY LAW.
+
+7. Indemnification
+
+The Licensee agrees to indemnify, defend, and hold harmless the Licensor, its affiliates, officers, directors, employees, and agents from and against any and all claims, liabilities, damages, losses, costs, expenses, or fees (including reasonable attorneys' fees) arising out of or relating to:
+a) The Licensee's Use of the Project in violation of this License;
+b) The Licensee's violation of any rights of another, including any intellectual property rights;
+c) Any claim that the Licensee's Use of the Project caused damage to a third party;
+d) Any breach of the Licensee's obligations under this License.
+
+8. Termination
+
+8.1. This License is effective upon the Licensee's first Use of the Project and will remain in effect until terminated.
+8.2. This License will terminate automatically and immediately without notice from the Licensor if the Licensee fails to comply with any term or condition of this License.
+8.3. Upon termination, the Licensee must immediately cease all Use of the Project and destroy all copies of the Project in its possession.
+8.4. Sections 3, 4, 5, 6, 7, 9, 10, and 11 shall survive any termination of this License.
+
+9. Governing Law and Dispute Resolution
+
+This License shall be governed by and construed in accordance with the laws of [Your State/Country, e.g., the State of California, USA], without regard to its conflict of law principles. Any dispute arising out of or in connection with this License shall be subject to the exclusive jurisdiction of the state and federal courts located in [Your County/City, e.g., San Francisco County, California].
+
+10. Severability
+
+If any provision of this License is found to be invalid or unenforceable by a court of competent jurisdiction, such invalidity or unenforceability shall not affect the validity or enforceability of the remaining provisions, which shall remain in full force and effect.
+
+11. Entire Agreement
+
+This License constitutes the entire agreement between the Licensor and the Licensee regarding the Project and supersedes all prior or contemporaneous understandings, agreements, communications, and representations, whether oral or written.
+
+Important Notes and Cautions for You:
+
+Legal Advice is Essential: I am an AI, not a lawyer. This license is a template. You MUST consult with a qualified attorney specializing in intellectual property and software licensing to tailor this document to your specific needs, jurisdiction, and project.
+"No Trouble" is Impossible: Reiterate: No license can prevent lawsuits or regulatory action if you act negligently or unlawfully, especially concerning data security. The "Limitation of Liability" section aims to minimize financial exposure but doesn't prevent being sued.
+Enforceability: The enforceability of clauses like "no use of idea" can be challenging. Courts typically protect expressions (copyright, patent) rather than abstract ideas. The language here tries to push the boundary by linking the idea to the specific "Designs" and "Project" which are protected.
+Maintenance and Updates: The security of your project will depend on your ongoing maintenance, patching, and adherence to security best practices. A license doesn't absolve you of this responsibility.
+User Agreement: Ensure that users explicitly agree to this license (e.g., via a click-wrap agreement before downloading/using the software).
+
+Cyborg Tek
+T.B
+
+
+
+
+
+
+
+
+
+
+
+
