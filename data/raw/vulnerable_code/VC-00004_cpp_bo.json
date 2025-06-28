@@ -1,0 +1,18 @@
+{
+  "id": "VC-00004",
+  "language": "c++",
+  "source_info": {
+    "type": "Manual Example",
+    "url": null,
+    "related_cve": "CVE-2020-0796"
+  },
+  "vulnerability_details": {
+    "cwe_id": "CWE-120",
+    "cwe_name": "Buffer Copy without Checking Size of Input ('Classic Buffer Overflow')",
+    "description": "The strcpy function is used to copy the contents of 'userInput' into 'buffer'. Strcpy does not perform bounds checking. If 'userInput' is larger than 99 bytes, it will write past the end of the buffer, corrupting the stack and potentially leading to arbitrary code execution."
+  },
+  "code_snippets": {
+    "vulnerable_code": "#include <cstring>\n\nvoid process_input(char* userInput) {\n    char buffer[100];\n    strcpy(buffer, userInput); // UNSAFE\n}",
+    "fixed_code": "#include <cstring>\n\nvoid process_input(char* userInput) {\n    char buffer[100];\n    // SAFE: strncpy copies at most n-1 characters and null-terminates.\n    strncpy(buffer, userInput, sizeof(buffer) - 1);\n    buffer[sizeof(buffer) - 1] = '\\0';\n}"
+  }
+}
