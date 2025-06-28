@@ -1,0 +1,18 @@
+{
+  "id": "VC-00002",
+  "language": "java",
+  "source_info": {
+    "type": "Manual Example",
+    "url": null,
+    "related_cve": "CVE-2019-19781"
+  },
+  "vulnerability_details": {
+    "cwe_id": "CWE-22",
+    "cwe_name": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal')",
+    "description": "The code accepts a filename from user input and directly concatenates it to a base directory path. An attacker can use '..' sequences to navigate outside the intended directory and access sensitive system files."
+  },
+  "code_snippets": {
+    "vulnerable_code": "public File getFile(String userInput) {\n    String basePath = \"/var/www/user_files/\";\n    return new File(basePath + userInput);\n}",
+    "fixed_code": "public File getFile(String userInput) throws IOException {\n    String basePath = \"/var/www/user_files/\";\n    File requestedFile = new File(basePath + userInput);\n    // Security Check: Ensure the final path is within the base directory\n    if (!requestedFile.getCanonicalPath().startsWith(basePath)) {\n        throw new SecurityException(\"Path Traversal Attack Detected!\");\n    }\n    return requestedFile;\n}"
+  }
+}
