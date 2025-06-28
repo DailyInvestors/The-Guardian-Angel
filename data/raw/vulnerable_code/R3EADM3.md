@@ -1,30 +1,15 @@
-/data/raw/
-└── vulnerable_code/
-    ├── README.md               # VERY IMPORTANT: Explains the schema and how to contribute.
-    ├── VC-00001_py_sqli.json   # Example: Python SQL Injection
-    ├── VC-00002_java_patht.json# Example: Java Path Traversal
-    ├── VC-00003_js_xss.json    # Example: JavaScript XSS
-    ├── VC-00004_cpp_bo.json    # Example: C++ Buffer Overflow
-    └── ...                     # Hundreds or thousands more files
+1. Mining Public Repositories: We will develop scripts to mine GitHub for commits that fix security vulnerabilities.
+Keywords: Search commit messages for "fix CVE-...", "resolve security vulnerability", "XSS fix", "prevent SQLi".
+Process: The script will fetch the pre-commit and post-commit state of the changed files, providing perfect vulnerable_code and fixed_code pairs. This is the highest-quality source.
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
+2. Ingesting Academic/Standard Datasets: We will write parsers for existing security datasets.
+NIST SARD: The Software Assurance Reference Dataset is a massive collection of synthetic C/C++ and Java test cases.
+Juliet Test Suite: Another well-known suite from the NSA with thousands of test cases for C/C++ and Java.
 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+3. Manual Curation & Community Contribution:
+Security researchers and developers can manually create JSON files following our schema.
+We can create a simple web form for community members to submit vulnerable/fixed code pairs, which maintainers can then review and convert into our JSON format.
+This structured approach gives us an incredibly rich and valuable dataset. Our model can now be trained not just to identify bad patterns but to understand the transformation from vulnerable to secure code, which is a much more powerful capability.
 
-// Template for a vulnerable code JSON file.
-{
-  "id": "VC-XXXXX", // Unique identifier for this code sample.
-  "language": "python | java | javascript | csharp | c++ | etc.",
-  "source_info": {
-    "type": "GitHub Commit | CVE Report | CTF Challenge | Manual Example",
-    "url": "URL to the source commit, report, or challenge",
-    "related_cve": "CVE-XXXX-XXXX" // Optional: Links back to our CVE data.
-  },
-  "vulnerability_details": {
-    "cwe_id": "CWE-XX", // e.g., "CWE-89" for SQL Injection
-    "cwe_name": "Name of the Common Weakness Enumeration", // e.g., "SQL Injection"
-    "description": "A clear, natural language explanation of why the code is vulnerable. This is crucial for the LLM."
-  },
-  "code_snippets": {
-    "vulnerable_code": "...", // A string containing the raw, vulnerable code snippet.
-    "fixed_code": "..."      // A string containing the corrected, secure version of the code.
-  }
-}
