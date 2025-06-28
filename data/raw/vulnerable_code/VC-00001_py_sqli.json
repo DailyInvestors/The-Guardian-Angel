@@ -1,0 +1,18 @@
+{
+  "id": "VC-00001",
+  "language": "python",
+  "source_info": {
+    "type": "Manual Example",
+    "url": null,
+    "related_cve": null
+  },
+  "vulnerability_details": {
+    "cwe_id": "CWE-89",
+    "cwe_name": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection')",
+    "description": "The vulnerable code directly formats user-provided input into an SQL query string. An attacker can provide malicious input like 'admin' --' to bypass authentication or extract data."
+  },
+  "code_snippets": {
+    "vulnerable_code": "def get_user(username):\n    import sqlite3\n    db = sqlite3.connect('example.db')\n    query = f\"SELECT * FROM users WHERE username = '{username}'\"\n    return db.execute(query).fetchone()",
+    "fixed_code": "def get_user(username):\n    import sqlite3\n    db = sqlite3.connect('example.db')\n    query = \"SELECT * FROM users WHERE username = ?\"\n    return db.execute(query, (username,)).fetchone()"
+  }
+}
