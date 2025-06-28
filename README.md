@@ -1,30 +1,103 @@
-Description: Making a AI project just to play around and ShowCase skills. This AI is starting out basic, and will slowly work on it as the years go. This is my practice model, as I'm building this off my Phone in-between my Bash lessons.
+GuardianAI 🛡️
+![alt text](https://github.com/DailyInvestors/GuardianAI/actions/workflows/python-ci.yml/badge.svg)
 
+![alt text](https://img.shields.io/badge/License-Apache%202.0-blue.svg)
 
-1. Setting up Your Virtual Environment 
-{
-  1. ./scripts/setup_environment.sh will automate this process. First copy the file. Next create a file and paste the contents. Chmod +x the file name. To run ./setup_environment.sh. You may need to use sudo depending on your User powers.
-}
+![alt text](https://img.shields.io/badge/python-3.9%20|%203.10%20|%203.11-blue.svg)
+GuardianAI is a community-driven, open-source project to build a powerful, transparent, and accessible multimodal AI for security analysis. Our mission is to create a tool that can understand not just code and text-based threat reports, but also visual data like screenshots of phishing attempts, to provide a more holistic approach to digital security.
+Key Features
+🧠 Multimodal by Design: Analyzes text (code, CVEs, reports), and images (website screenshots, logos) to identify threats.
+🔐 Security-Focused: Trained on a specialized corpus of vulnerable code, security advisories, threat intelligence reports, and phishing data.
+📖 Open & Transparent: All code, training data processing scripts, and model architectures are open-source to encourage trust, collaboration, and verification.
+🧩 Modular Architecture: Built with a clean, component-based structure in PyTorch, making it easy for contributors to improve specific parts of the model.
+🤝 Community-Driven: GuardianAI's strength comes from its community. We welcome contributions of all kinds, from data curation to model development.
+Getting Started: Installation
+Follow these steps to set up your local development environment.
+Prerequisites
+Git: You must have Git installed to clone the repository. Download Git.
+Python: You need Python 3.9, 3.10, or 3.11. Download Python.
+Important: During installation, make sure to check the box that says "Add Python to PATH" or similar.
+Core Setup Steps
+First, clone the repository to your local machine:
+Generated sh
+git clone https://github.com/YourUsername/GuardianAI.git
+cd GuardianAI
+Use code with caution.
+Sh
+Replace YourUsername with the actual GitHub organization or username.
+Now, follow the instructions for your specific operating system.
+💻 For Windows (Microsoft)
+We use PowerShell to set up the environment on Windows.
+Open PowerShell: Open a PowerShell terminal (do not use Command Prompt/CMD).
+Adjust Execution Policy (If Needed): By default, PowerShell may block script execution. Run the following command to allow scripts for your current session. This is a safe, temporary change.
+Generated powershell
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope Process
+Use code with caution.
+Powershell
+Run the Setup Script:
+Generated powershell
+.\scripts\setup_environment.ps1
+Use code with caution.
+Powershell
+This script will create a venv, activate it, and install all necessary dependencies.
+🍎 For macOS (Apple) & 🐧 For Linux (including ChromeOS)
+For macOS, Linux, and the Linux environment on ChromeOS, we use the Bash setup script.
+Open your Terminal.
+Make the Script Executable: This is a one-time command to grant permission to run the script.
+Generated sh
+chmod +x scripts/setup_environment.sh
+Use code with caution.
+Sh
+Run the Setup Script:
+Generated sh
+./scripts/setup_environment.sh
+Use code with caution.
+Sh
+This will create and configure the Python virtual environment and install all dependencies.
+📱 A Note on Mobile Platforms (Android & iOS)
+The GuardianAI development environment is designed for desktop operating systems (Windows, macOS, Linux). The tools required for training and developing a large AI model (PyTorch, GPU drivers, etc.) are not available on Android or iOS.
+However, a long-term goal for the GuardianAI project is to make the trained model accessible to mobile applications, likely through an API. This would allow a future Android or iOS app to send data (like a suspicious URL or a screenshot) to the GuardianAI model for analysis and receive a result.
+TL;DR: You develop GuardianAI on a desktop, but one day it could power security tools on your phone.
+Usage
+After running the setup script, your virtual environment (venv) will be active.
+Running Tests
+To ensure everything is working correctly, run our full test suite using pytest:
+Generated sh
+pytest
+Use code with caution.
+Sh
+Code Style & Linting
+We use black for code formatting and ruff for linting.
+Generated sh
+# To automatically format all code to match the project style
+black .
 
+# To check for potential errors and style issues
+ruff .
+Use code with caution.
+Sh
+Our Continuous Integration (CI) will fail if the code is not formatted or if ruff finds errors.
+Project Structure
+Here is a brief overview of the project's layout:
+Generated code
+/GuardianAI/
+├── .github/          # GitHub-specific workflows (CI)
+├── configs/          # Configuration files for models and training
+├── data/             # Scripts and instructions for handling datasets (data is gitignored)
+├── docs/             # Project documentation
+├── evaluation/       # Scripts and benchmarks for evaluating model performance
+├── notebooks/        # Jupyter notebooks for experimentation and analysis
+├── scripts/          # Helper scripts (like environment setup)
+├── src/guardian_ai/  # The main Python source code for the project
+└── tests/            # The test suite for our source code
+Use code with caution.
+Contributing
+We welcome contributions of all kinds! Whether you're a data scientist, a software engineer, a security researcher, or just an enthusiastic user, you can help.
+Please read our CONTRIBUTING.md (coming soon!) for details on our code of conduct and the process for submitting pull requests.
+For major changes, please open an issue first to discuss what you would like to change.
+Join our community on Discord to chat with developers and get involved!
+License
+This project is licensed under the Apache 2.0 License. See the LICENSE file for details.
+37.3s
+Start typing a prompt
 
-2. Breakdown of the Workflow
-name:
-{
-GuardianAI Continuous Integration: A clear, human-readable name for the workflow that will appear in the "Actions" tab on GitHub.
-on:: This defines the triggers. The workflow will start automatically whenever someone pushes a commit to the main branch or opens/updates a pull_request that targets main. This is the perfect setup for quality control.
-
-jobs:: Defines the tasks to be performed. We have one job called build-and-test.
-strategy: matrix:: This is the most powerful part. Instead of writing separate workflows for each OS and Python version, the matrix tells GitHub to create a separate job for every combination. In this case, it will spin up 9 jobs (3 OS x 3 Python versions) to test our code in parallel. fail-fast: false ensures that if the tests fail on Python 3.9, the jobs for 3.10 and 3.11 will still run to completion, giving us a full picture of compatibility.
-runs-on: ${{ matrix.os }}: This tells each job to use the operating system specified by the current matrix combination (e.g., ubuntu-latest).
-steps:: These are the individual commands executed in order.
-actions/checkout@v4: A standard action that downloads your repository's code onto the runner machine.
-actions/setup-python@v5: Another standard action that installs the desired Python version. We use cache: 'pip' to save our installed packages, which makes subsequent runs much faster.
-Install Dependencies: A standard shell command that upgrades pip and then installs everything from our requirements-dev.txt file. This includes pytest, black, ruff, etc.
-Lint with Ruff and Black: This step runs our quality tools. ruff . checks for common errors and style issues. black --check . verifies that the code is formatted correctly without changing any files. If the code is not formatted, this step will fail, forcing the contributor to format it locally before merging.
-Test with Pytest: This executes our test suite. --cov=src/guardian_ai is important; it tells the coverage tool to only report on code inside our actual package, ignoring tests and other files. --cov-report=xml generates a coverage.xml file, which is a standard format used by reporting tools.
-Upload coverage reports to Codecov: This step takes the coverage.xml file and uploads it to a service like Codecov. When you link Codecov to your GitHub repo, it will post a comment in each pull request showing how test coverage has changed, which is incredibly useful. Remember to replace YourGitHubUsername/GuardianAI with your actual repository path.
-How to Use This
-Create the directory structure .github/workflows/ in your project root.
-Save the code above as python-ci.yml inside that directory.
-Commit and push this file to your GitHub repository.
-That's it! The next time you open a pull request or push to main, you will see this workflow automatically start running in the "Actions" tab of your repository. It will provide a clear green checkmark for success or a red X for failure, with links to the logs for easy debugging.
