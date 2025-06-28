@@ -1,0 +1,17 @@
+# --- Core Deep Learning & Transformers ---
+torch
+transformers
+datasets
+accelerate
+sentencepiece
+
+# --- Multimodal & Data Handling ---
+Pillow
+timm
+
+# --- Classical ML & Evaluation ---
+scikit-learn
+pandas
+
+
+Note: This will be updated periodically as technology and codes will periodically advance.
