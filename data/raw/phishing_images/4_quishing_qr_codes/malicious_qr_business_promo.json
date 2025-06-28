@@ -1,0 +1,15 @@
+{
+  "image_id": "malicious_qr_business_promo",
+  "source_info": {
+    "type": "Community Submission",
+    "submission_date_utc": "2024-03-09T11:00:00Z"
+  },
+  "context": {
+    "source_url": null,
+    "landing_url": "http://bit.ly/malicious-payload-installer",
+    "impersonated_brand": "Local Coffee Shop",
+    "phishing_email_subject": null,
+    "notes": "A 'quishing' attack where a QR code promises a discount but links to a credential harvesting page or malware download."
+  },
+  "ocr_text": "Scan for a FREE Coffee!\nYour Perk is Waiting!"
+}
