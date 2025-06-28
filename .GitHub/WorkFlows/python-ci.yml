@@ -1,88 +1,59 @@
-/GuardianAI/
-├── .github/
-│   └── workflows/
-│       └── python-ci.yml
-│
-├── .gitignore
-├── LICENSE
-├── README.md
-├── requirements.txt          # [+] Added Pillow, scikit-learn, timm
-├── requirements-dev.txt
-│
-├── configs/
-│   ├── model/
-│   │   └── guardian_multimodal_7b_config.json
-│   └── training/
-│       └── default_trainer_args.json
-│
-├── data/
-│   ├── README.md
-│   ├── raw/
-│   │   ├── cve_details/
-│   │   ├── vulnerable_code/
-│   │   ├── threat_reports/
-│   │   └── phishing_images/  # [+] Directory for image datasets
-│   │       ├── real_logos/
-│   │       └── fake_logins/
-│   └── processed/
-│       ├── security_corpus.arrow
-│       └── image_metadata.csv # [+] Metadata linking images to labels
-│
-├── docs/
-│   ├── architecture.md       # Will now describe the multimodal architecture
-│   ├── data_pipeline.md
-│   └── fine_tuning.md
-│
-├── evaluation/
-│   ├── benchmarks/
-│   │   ├── code_vuln_detection/
-│   │   ├── secure_code_generation/
-│   │   └── image_phishing_detection/ # [+] Benchmark for image tasks
-│   ├── evaluate_model.py
-│   └── leaderboards/
-│
-├── notebooks/                # [+] NEW FOLDER for experiments & baselines
-│   ├── 1_data_exploration.ipynb
-│   └── 2_sklearn_baseline_model.ipynb # [+] Scikit-learn baseline
-│
-├── scripts/
-│   ├── setup_environment.sh
-│   ├── setup_environment.ps1
-│   ├── run_tests.sh
-│   └── run_linter.sh
-│
-├── src/
-│   └── guardian_ai/
-│       ├── __init__.py
-│       ├── data_processing/
-│       │   ├── __init__.py
-│       │   ├── code_parser.py
-│       │   ├── cve_parser.py
-│       │   ├── image_processor.py # [+] New module for handling images
-│       │   └── text_cleaner.py
-│       │
-│       ├── model/
-│       │   ├── __init__.py
-│       │   ├── multimodal_architecture.py # Renamed from architecture.py
-│       │   └── components/          # [+] NEW FOLDER for modular parts
-│       │       ├── __init__.py
-│       │       ├── text_encoder.py  # Our original transformer
-│       │       └── vision_encoder.py # The new Vision Transformer part
-│       │
-│       ├── inference/
-│       │   ├── __init__.py
-│       │   └── predictor.py         # Will now handle text and/or image inputs
-│       │
-│       └── training/
-│           ├── __init__.py
-│           └── trainer.py
-│
-└── tests/
-    ├── __init__.py
-    ├── test_data_processing.py
-    ├── test_image_processor.py      # [+] New test file
-    └── test_model_forward_pass.py
+name: GuardianAI Continuous Integration
 
+# This workflow runs on pushes to the main branch or any pull request targeting main.
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
 
+jobs:
+  build-and-test:
+    # Use a matrix strategy to test on different OS and Python versions.
+    strategy:
+      fail-fast: false # Don't cancel all jobs if one fails
+      matrix:
+        os: [ubuntu-latest, macos-latest, windows-latest]
+        python-version: ["3.9", "3.10", "3.11"]
 
-Posting in Here briefly. This is a AI Project now, playing with.
+    # The type of runner that the job will run on
+    runs-on: ${{ matrix.os }}
+
+    steps:
+      # 1. Checkout the repository code
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      # 2. Set up the specific Python version from the matrix
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip' # Cache pip dependencies to speed up future runs
+
+      # 3. Install all project dependencies
+      - name: Install Dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements-dev.txt
+
+      # 4. Lint code with Ruff and check formatting with Black
+      - name: Lint with Ruff and Black
+        run: |
+          ruff .
+          black --check .
+
+      # 5. Run tests with pytest and generate coverage report
+      # The src/guardian_ai path ensures we only measure coverage of our package.
+      - name: Test with Pytest
+        run: |
+          pytest --cov=src/guardian_ai --cov-report=xml
+
+      # 6. (Optional) Upload coverage report to Codecov
+      # This step provides visibility into test coverage in pull requests.
+      # Requires setting up a free Codecov account and adding a CODECOV_TOKEN secret to your GitHub repo.
+      - name: Upload coverage reports to Codecov
+        uses: codecov/codecov-action@v4
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          slug: YourGitHubUsername/GuardianAI # Replace with your repo slug
