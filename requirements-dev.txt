@@ -1,0 +1,17 @@
+# Include the core application requirements
+-r requirements.txt
+
+# --- Testing ---
+pytest
+pytest-cov
+
+# --- Code Quality & Formatting ---
+black
+ruff
+
+# --- Notebooks ---
+jupyter
+ipykernel
+
+# --- Pre-commit Hooks ---
+pre-commit
