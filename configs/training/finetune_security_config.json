@@ -1,43 +1,29 @@
 {
-  "_comment": "Configuration for Stage 2: Fine-tuning on the GuardianAI multimodal security dataset.",
+  "_comment": "Configuration for Stage 2: Fine-tuning on the GuardianAI security dataset. This file ONLY specifies overrides to the default_trainer_args.json.",
 
   "output_dir": "./models/guardian-multimodal-7b-security-tuned",
   "model_name_or_path": "./models/guardian-base-7b",
   "dataset_name_or_path": "./data/processed/security_corpus_multimodal.arrow",
-
+  
   "learning_rate": 2e-6,
   "num_train_epochs": 3,
+  
   "per_device_train_batch_size": 4,
-  "per_device_eval_batch_size": 4,
   "gradient_accumulation_steps": 2,
-
-  "lr_scheduler_type": "cosine",
-  "warmup_ratio": 0.03,
-  "weight_decay": 0.0,
 
   "evaluation_strategy": "steps",
   "eval_steps": 500,
   "load_best_model_at_end": true,
 
-  "logging_strategy": "steps",
   "logging_steps": 50,
-  
-  "save_strategy": "steps",
-  "save_steps": 500,
-  "save_total_limit": 3,
-  
+
   "bf16": true,
-  "max_seq_length": 4096,
   "overwrite_output_dir": true,
-  "ddp_find_unused_parameters": false,
   
   "report_to": "wandb",
   "run_name": "guardian-7b-security-finetune-run-1",
 
-  "deepspeed": "./configs/training/deepspeed_stage3_config.json",
-
   "sanitizer_config": {
-    "_comment": "Configuration for the on-the-fly data sanitizer applied during fine-tuning.",
     "enable": true,
     "pii_detection": {
       "strategy": "redact",
