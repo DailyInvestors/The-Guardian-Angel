@@ -1,0 +1,15 @@
+{
+  "image_id": "fake_microsoft_login_01",
+  "source_info": {
+    "type": "Honeypot",
+    "submission_date_utc": "2024-03-10T15:00:00Z"
+  },
+  "context": {
+    "source_url": "http://micosoft-login.verify-account-portal.com/auth",
+    "landing_url": "http://micosoft-login.verify-account-portal.com/submit_credentials.php",
+    "impersonated_brand": "Microsoft",
+    "phishing_email_subject": "Action Required: Unusual sign-in activity on your account",
+    "notes": "URL uses a common typosquatting technique ('micosoft'). The page design is a near-perfect pixel replica of the real site."
+  },
+  "ocr_text": "Sign in\nEmail, phone, or Skype\nNo account? Create one!\nCan't access your account?"
+}
