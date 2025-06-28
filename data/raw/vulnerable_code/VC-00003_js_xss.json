@@ -1,0 +1,18 @@
+{
+  "id": "VC-00003",
+  "language": "javascript",
+  "source_info": {
+    "type": "Manual Example",
+    "url": null,
+    "related_cve": null
+  },
+  "vulnerability_details": {
+    "cwe_id": "CWE-79",
+    "cwe_name": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting')",
+    "description": "The code takes user input and writes it directly into the DOM using 'innerHTML'. An attacker can provide malicious HTML and JavaScript code (e.g., '<script>alert(1)</script>') which will then be executed in the victim's browser."
+  },
+  "code_snippets": {
+    "vulnerable_code": "function displayComment(commentText) {\n    const commentDiv = document.getElementById('comment-container');\n    commentDiv.innerHTML = commentText;\n}",
+    "fixed_code": "function displayComment(commentText) {\n    const commentDiv = document.getElementById('comment-container');\n    // Using textContent prevents the browser from interpreting the string as HTML\n    commentDiv.textContent = commentText;\n}"
+  }
+}
