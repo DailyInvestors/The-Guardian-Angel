@@ -1,0 +1,7 @@
+Title: UNC2452: An Unprecedented Espionage Campaign
+Source: Mandiant Threat Intelligence
+Date: 2020-12-13
+
+Mandiant has identified a sophisticated espionage campaign, designated as UNC2452, that leveraged a supply chain compromise to distribute malicious code through SolarWinds Orion platform updates. The primary malware, known as SUNBURST, was a trojanized version of a legitimate SolarWinds DLL. 
+
+Once active, the attackers deployed a secondary backdoor, TEARDROP, to move laterally. Associated activity maps to MITRE ATT&CK techniques such as T1195 (Supply Chain Compromise) and T1566 (Phishing). The vulnerability in SolarWinds is tracked as CVE-2020-27988. IOCs include domains like avsvmcloud[.]com.
