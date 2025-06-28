@@ -1,0 +1,70 @@
+{
+  "_comment": "Configuration for the GuardianAI 7B Multimodal Security Model.",
+  "model_type": "guardian-multimodal",
+  "architectures": ["GuardianMultimodal"],
+  "total_parameters_approx": "7B",
+
+  "text_config": {
+    "_comment": "Configuration for the text processing part (LLM). Based on Llama-2 7B.",
+    "model_type": "llama",
+    "vocab_size": 32000,
+    "hidden_size": 4096,
+    "intermediate_size": 11008,
+    "num_hidden_layers": 32,
+    "num_attention_heads": 32,
+    "max_position_embeddings": 4096,
+    "hidden_act": "silu",
+    "initializer_range": 0.02,
+    "rms_norm_eps": 1e-6,
+    "attention_dropout": 0.0,
+    "pad_token_id": 0
+  },
+
+  "vision_config": {
+    "_comment": "Configuration for the image processing part. We use a pre-trained Vision Transformer (ViT) as a strong baseline.",
+    "model_type": "vit",
+    "pretrained_model_name_or_path": "google/vit-base-patch16-224-in21k",
+    "hidden_size": 768,
+    "image_size": 224,
+    "patch_size": 16,
+    "num_channels": 3
+  },
+
+  "multimodal_config": {
+    "_comment": "Configuration for fusing text and vision modalities.",
+    "fusion_strategy": "cross_attention",
+
+    "projector_config": {
+      "_comment": "A projector (MLP) to map the vision encoder's output dimension (768) to the text encoder's dimension (4096) so they can interact.",
+      "input_dim": 768,
+      "output_dim": 4096,
+      "hidden_act": "gelu"
+    },
+
+    "cross_attention_config": {
+      "_comment": "Configuration for the cross-attention layers where text and image representations interact.",
+      "num_layers": 4,
+      "num_heads": 8,
+      "hidden_size": 4096
+    }
+  },
+
+  "classification_head": {
+    "_comment": "The final layer that makes a prediction based on the fused representation.",
+    "num_labels": 5,
+    "id2label": {
+      "0": "BENIGN",
+      "1": "VULNERABLE_CODE",
+      "2": "PHISHING_ATTEMPT",
+      "3": "INSECURE_CONFIGURATION",
+      "4": "MALICIOUS_SCRIPT"
+    },
+    "label2id": {
+      "BENIGN": 0,
+      "VULNERABLE_CODE": 1,
+      "PHISHING_ATTEMPT": 2,
+      "INSECURE_CONFIGURATION": 3,
+      "MALICIOUS_SCRIPT": 4
+    }
+  }
+}
