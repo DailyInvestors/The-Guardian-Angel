@@ -3,5 +3,5 @@ Description: Making a AI project just to play around and ShowCase skills. This A
 
 1. Setting up Your Virtual Environment 
 {
-  1. setup_environment.sh will automate this process. First copy the file. Next create a file and paste the contents. Chmod +x the file name. To run ./setup_environment.sh. You may need to use sudo depending on your User powers.
+  1. ./scripts/setup_environment.sh will automate this process. First copy the file. Next create a file and paste the contents. Chmod +x the file name. To run ./setup_environment.sh. You may need to use sudo depending on your User powers.
 }
