@@ -120,3 +120,89 @@ License
 This project is licensed under the Apache 2.0 License. See the LICENSE file for details.
 
 
+Here is the Basic Framework and Idea. Well make this Different then all the Others so we Don't Step on Each Others 💡 with Perplexity, Gemini, GitHub, DeepSeek. Everyone else irrelevant. We will make this within Laws, but we can deal with that and remake modifications if nesscary. Whoever Pitches in, when we start making Money in Advertising, etc. Which we can do all that ourselves, We are Hackers.  
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+/GuardianAI/
+├── .github/
+│   └── workflows/
+│       └── python-ci.yml
+│
+├── .gitignore
+├── LICENSE
+├── README.md
+├── requirements.txt          # [+] Added Pillow, scikit-learn, timm
+├── requirements-dev.txt
+│
+├── configs/
+│   ├── model/
+│   │   └── guardian_multimodal_7b_config.json
+│   └── training/
+│       └── default_trainer_args.json
+│
+├── data/
+│   ├── README.md
+│   ├── raw/
+│   │   ├── cve_details/
+│   │   ├── vulnerable_code/
+│   │   ├── threat_reports/
+│   │   └── phishing_images/  # [+] Directory for image datasets
+│   │       ├── real_logos/
+│   │       └── fake_logins/
+│   └── processed/
+│       ├── security_corpus.arrow
+│       └── image_metadata.csv # [+] Metadata linking images to labels
+│
+├── docs/
+│   ├── architecture.md       # Will now describe the multimodal architecture
+│   ├── data_pipeline.md
+│   └── fine_tuning.md
+│
+├── evaluation/
+│   ├── benchmarks/
+│   │   ├── code_vuln_detection/
+│   │   ├── secure_code_generation/
+│   │   └── image_phishing_detection/ # [+] Benchmark for image tasks
+│   ├── evaluate_model.py
+│   └── leaderboards/
+│
+├── notebooks/                # [+] NEW FOLDER for experiments & baselines
+│   ├── 1_data_exploration.ipynb
+│   └── 2_sklearn_baseline_model.ipynb # [+] Scikit-learn baseline
+│
+├── scripts/
+│   ├── setup_environment.sh
+│   ├── setup_environment.ps1
+│   ├── run_tests.sh
+│   └── run_linter.sh
+│
+├── src/
+│   └── guardian_ai/
+│       ├── __init__.py
+│       ├── data_processing/
+│       │   ├── __init__.py
+│       │   ├── code_parser.py
+│       │   ├── cve_parser.py
+│       │   ├── image_processor.py # [+] New module for handling images
+│       │   └── text_cleaner.py
+│       │
+│       ├── model/
+│       │   ├── __init__.py
+│       │   ├── multimodal_architecture.py # Renamed from architecture.py
+│       │   └── components/          # [+] NEW FOLDER for modular parts
+│       │       ├── __init__.py
+│       │       ├── text_encoder.py  # Our original transformer
+│       │       └── vision_encoder.py # The new Vision Transformer part
+│       │
+│       ├── inference/
+│       │   ├── __init__.py
+│       │   └── predictor.py         # Will now handle text and/or image inputs
+│       │
+│       └── training/
+│           ├── __init__.py
+│           └── trainer.py
+│
+└── tests/
+    ├── __init__.py
+    ├── test_data_processing.py
+    ├── test_image_processor.py      # [+] New test file
+    └── test_model_forward_pass.py
