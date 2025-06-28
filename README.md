@@ -120,7 +120,7 @@ License
 This project is licensed under the Apache 2.0 License. See the LICENSE file for details.
 
 
-Here is the Basic Framework and Idea. Well make this Different then all the Others so we Don't Step on Each Others 💡 with Perplexity, Gemini, GitHub, DeepSeek. Everyone else irrelevant. We will make this within Laws, but we can deal with that and remake modifications if nesscary. Whoever Pitches in, when we start making Money in Advertising, etc. Which we can do all that ourselves, We are Hackers.  
+Here is the Basic Framework and Idea. Well make this Different then all the Others so we Don't Step on Each Others 💡 with Perplexity, Gemini, GitHub, DeepSeek. Everyone else irrelevant. We will make this within Laws, but we can deal with that and remake modifications if nesscary. Whoever Pitches in, when we start making Money in Advertising, etc, I am Righteous and well brake evenly. We will accept Donations for our Work. And Since I'm not seeing any other Major Product's here on GitHub that Public, Let's get it in Yal. What's a couple of functions? Were all on here to make money? So Let's Start 🔥🔥🤖✨Which we can do all that ourselves, We are Hackers.  
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 /GuardianAI/
 ├── .github/
