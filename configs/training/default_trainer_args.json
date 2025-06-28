@@ -1,0 +1,34 @@
+{
+  "_comment": "Default Training Arguments for GuardianAI. These settings provide a safe and sensible baseline for all training jobs. Stage-specific configs will override these values.",
+
+  "learning_rate": 5e-5,
+  "lr_scheduler_type": "cosine",
+  "warmup_ratio": 0.03,
+  "weight_decay": 0.01,
+
+  "per_device_train_batch_size": 8,
+  "per_device_eval_batch_size": 8,
+  "gradient_accumulation_steps": 1,
+  
+  "logging_strategy": "steps",
+  "logging_steps": 100,
+  "logging_first_step": true,
+
+  "evaluation_strategy": "no",
+  "save_strategy": "steps",
+  "save_steps": 1000,
+  "save_total_limit": 2,
+
+  "bf16": false,
+  "fp16": false,
+  "_comment_precision": "Default to full precision (fp32). Enable bf16/fp16 in stage-specific configs for performance on compatible hardware.",
+  
+  "overwrite_output_dir": false,
+  "_comment_overwrite": "Safety first: Default to NOT overwriting output to prevent accidental data loss.",
+
+  "load_best_model_at_end": false,
+  "ddp_find_unused_parameters": false,
+
+  "report_to": "none",
+  "_comment_report": "Default to no reporting. Enable 'wandb' or 'tensorboard' in specific configs."
+}
