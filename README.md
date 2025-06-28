@@ -28,6 +28,3 @@ Create the directory structure .github/workflows/ in your project root.
 Save the code above as python-ci.yml inside that directory.
 Commit and push this file to your GitHub repository.
 That's it! The next time you open a pull request or push to main, you will see this workflow automatically start running in the "Actions" tab of your repository. It will provide a clear green checkmark for success or a red X for failure, with links to the logs for easy debugging.
-This puts a professional, automated quality gate on our project. We have now established a solid foundation for development.
-}
-
