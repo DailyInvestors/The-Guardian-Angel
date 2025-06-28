@@ -1,0 +1,40 @@
+{
+  "_comment": "Configuration for Stage 1: Generative Pre-training on a general language/code corpus.",
+
+  "output_dir": "./models/guardian-base-7b",
+  "model_name_or_path": null,
+  "_comment_model_path": "model_name_or_path is null because we are training from scratch using the model config.",
+  
+  "dataset_name_or_path": "HuggingFaceTB/RedPajama-Data-1T-Sample",
+  "_comment_dataset": "Using a large, open dataset like RedPajama. This should be a path to the pre-processed data on disk.",
+  
+  "learning_rate": 2e-5,
+  "num_train_epochs": 1,
+  "per_device_train_batch_size": 8,
+  "per_device_eval_batch_size": 8,
+  "gradient_accumulation_steps": 4,
+  "_comment_batch": "Effective batch size will be (8 * 4 * num_gpus), crucial for stable pre-training.",
+
+  "lr_scheduler_type": "cosine",
+  "warmup_ratio": 0.03,
+  "weight_decay": 0.0,
+  
+  "logging_strategy": "steps",
+  "logging_steps": 100,
+  
+  "save_strategy": "steps",
+  "save_steps": 1000,
+  "save_total_limit": 3,
+  
+  "bf16": true,
+  "_comment_precision": "bf16 (bfloat16) is preferred for modern GPUs (A100/H100) for speed and stability.",
+
+  "max_seq_length": 4096,
+  "overwrite_output_dir": true,
+  "ddp_find_unused_parameters": false,
+  
+  "report_to": "wandb",
+  "_comment_logging": "Log metrics to Weights & Biases for visualization.",
+
+  "deepspeed": "./configs/training/deepspeed_stage3_config.json"
+}
